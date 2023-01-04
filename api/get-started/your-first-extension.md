@@ -1,89 +1,141 @@
----
-# DO NOT TOUCH — Managed by doc writer
-ContentId: DC915D6C-13D4-4022-9101-57C4A4118B07
-DateApproved: 12/7/2022
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-# Summarize the whole topic in less than 300 characters for SEO purpose
-MetaDescription: Create your first Visual Studio Code extension (plug-in) with a simple Hello World example.
----
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #4CAF50;
+}
 
-# Your First Extension
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
 
-In this topic, we'll teach you the fundamental concepts for building extensions. Make sure you have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/) installed, then install [Yeoman](https://yeoman.io/) and [VS Code Extension Generator](https://www.npmjs.com/package/generator-code) with:
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
 
-```bash
-npm install -g yo generator-code
-```
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
-The generator scaffolds a TypeScript or JavaScript project ready for development. Run the generator and fill out a few fields for a TypeScript project:
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
 
-```bash
-yo code
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
 
-# ? What type of extension do you want to create? New Extension (TypeScript)
-# ? What's the name of your extension? HelloWorld
-### Press <Enter> to choose default for all options below ###
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
 
-# ? What's the identifier of your extension? helloworld
-# ? What's the description of your extension? LEAVE BLANK
-# ? Initialize a git repository? Yes
-# ? Bundle the source code with webpack? No
-# ? Which package manager to use? npm
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
 
-# ? Do you want to open the new folder with Visual Studio Code? Open with `code`
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
 
-```
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
 
-Then, inside the editor, press `kb(workbench.action.debug.start)`. This will compile and run the extension in a new **Extension Development Host** window.
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
 
-Run the **Hello World** command from the Command Palette (`kb(workbench.action.showCommands)`) in the new window:
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
 
-<video loop muted playsinline controls title="Launch your first VS Code extension video">
-  <source src="/api/get-started/your-first-extension/launch.mp4" type="video/mp4">
-</video>
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
 
-You should see the `Hello World from HelloWorld!` notification showing up. Success!
+.copyright {
+  text-align: center;
+}
 
-## Developing the extension
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
 
-Let's make a change to the message:
+::-webkit-input-placeholder {
+  color: #888;
+}
 
-1. Change the message from "Hello World from HelloWorld!" to "Hello VS Code" in `extension.ts`.
-1. Run **Developer: Reload Window** in the new window.
-1. Run the command **Hello World** again.
+:-moz-placeholder {
+  color: #888;
+}
 
-You should see the updated message showing up.
+::-moz-placeholder {
+  color: #888;
+}
 
-<video loop muted playsinline controls title="Reload VS Code extension video">
-  <source src="/api/get-started/your-first-extension/reload.mp4" type="video/mp4">
-</video>
-
-Here are some ideas for things for you to try:
-
-- Give the **Hello World** command a new name in the Command Palette.
-- [Contribute](/api/references/contribution-points) another command that displays current time in an information message. Contribution points are static declarations you make in the `package.json` [Extension Manifest](/api/references/extension-manifest) to extend VS Code, such as adding commands, menus, or keybindings to your extension.
-- Replace the `vscode.window.showInformationMessage` with another [VS Code API](/api/references/vscode-api) call to show a warning message.
-
-## Debugging the extension
-
-VS Code's built-in debugging functionality makes it easy to debug extensions. Set a breakpoint by clicking the gutter next to a line, and VS Code will hit the breakpoint. You can hover over variables in the editor or use the **Run and Debug** view in the left to check a variable's value. The Debug Console allows you to evaluate expressions.
-
-<video loop muted playsinline controls title="Debug VS Code extension video">
-  <source src="/api/get-started/your-first-extension/debug.mp4" type="video/mp4">
-</video>
-
-You can learn more about debugging Node.js apps in VS Code in the [Node.js Debugging Topic](/docs/nodejs/nodejs-debugging).
-
-## Next steps
-
-In the next topic, [Extension Anatomy](/api/get-started/extension-anatomy), we'll take a closer look at the source code of the `Hello World` sample and explain key concepts.
-
-You can find the source code of this tutorial at: [https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-sample). The [Extension Guides](/api/extension-guides/overview) topic contains other samples, each illustrating a different VS Code API or Contribution Point, and following the recommendations in our [UX Guidelines](/api/ux-guidelines/overview).
-
-### Using JavaScript
-
-In this guide, we mainly describe how to develop VS Code extension with TypeScript because we believe TypeScript offers the best experience for developing VS Code extensions. However, if you prefer JavaScript, you can still follow along using [helloworld-minimal-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-minimal-sample).
-
-### UX Guidelines
-
-This is also a good time to review our [UX Guidelines](/api/ux-guidelines/overview) so you can start designing your extension user interface to follow the VS Code best practices.
+:-ms-input-placeholder {
+  color: #888;
